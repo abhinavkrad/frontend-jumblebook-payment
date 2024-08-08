@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gaming-payment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gaming-payment
+  template:
+    metadata:
+      labels:
+        app: gaming-payment
+    spec:
+      containers:
+      - name: gaming-payment
+        image: manish754/gaming-payment:latest
+        ports:
+        - containerPort: 80
